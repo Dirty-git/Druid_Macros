@@ -1,0 +1,181 @@
+Healing Touch:
+    Healing Touch is going to be your most down-ranked spell: you ll use rank 4, rank 8, and max rank at least; you can also use rank 3 as it has a faster cast time but, rank 3 receives much less + healing than higher ranks.
+    
+    
+    sHT
+#showtooltip
+/cast ?{sos}
+/use ?[noequipped] Rod of Resuscitation
+/use ?[mod:shift,noform:1/3,myrawpower:<1850,nomybuff:Clearcasting,nochanneled] Major Mana Potion
+/use ?[mod:shift,form:1/3,druidmana:<1850,nomybuff:Clearcasting] Major Mana Potion
+/cast [mod:shift,nocooldown] Tranquility
+/cast [noform:5,known] !Tree of Life Form
+/stopmacro [form:5]
+/cast [@mouseover,help,exists,nocombat] Healing Touch; [help,exists,nocombat] Healing Touch; [@player,nocombat] Healing Touch
+/stopmacro [nocombat]
+/cast [@mouseover,help,exists,mybuff:Clearcasting] Healing Touch; [help,exists,mybuff:Clearcasting] Healing Touch; [@player,mybuff:Clearcasting] Healing Touch
+/stopmacro [mybuff:Clearcasting]
+/cast [@mouseover,help,exists] {HTm}; [help,exists] {HTt}; {HTp}
+/stopmacro [myrawpower:>185]
+/pfcast Healing Touch
+
+    HTm
+/firstaction
+/cast [@mouseover,myrawpower:>720,hplost:>1728] Healing Touch; 
+/cast [@mouseover,myrawpower:>600,hplost:>1396] Healing Touch(Rank 9)
+/cast [@mouseover,myrawpower:>495,hplost:>1109] Healing Touch(Rank 8)
+/cast [@mouseover,myrawpower:>405,hplost:>870] Healing Touch(Rank 7)
+/cast [@mouseover,myrawpower:>335,hplost:>694] Healing Touch(Rank 6)
+/cast [@mouseover,myrawpower:>270,hplost:>539] Healing Touch(Rank 5)
+/cast [@mouseover,myrawpower:>185] Healing Touch(Rank 4)
+/nofirstaction
+
+    HTt
+/firstaction
+/cast [myrawpower:>720,hplost:>1728] Healing Touch
+/cast [myrawpower:>600,hplost:>1396] Healing Touch(Rank 9)
+/cast [myrawpower:>495,hplost:>1109] Healing Touch(Rank 8)
+/cast [myrawpower:>405,hplost:>870] Healing Touch(Rank 7)
+/cast [myrawpower:>335,hplost:>694] Healing Touch(Rank 6)
+/cast [myrawpower:>270,hplost:>539] Healing Touch(Rank 5)
+/cast [myrawpower:>185] Healing Touch(Rank 4)
+/nofirstaction
+
+
+    HTp
+/firstaction
+/cast [@player,myrawpower:>720,hplost:>1728] Healing Touch
+/cast [@player,myrawpower:>600,hplost:>1396] Healing Touch(Rank 9)
+/cast [@player,myrawpower:>495,hplost:>1109] Healing Touch(Rank 8)
+/cast [@player,myrawpower:>405,hplost:>870] Healing Touch(Rank 7)
+/cast [@player,myrawpower:>335,hplost:>694] Healing Touch(Rank 6)
+/cast [@player,myrawpower:>270,hplost:>539] Healing Touch(Rank 5)
+/cast [@player,myrawpower:>185] Healing Touch(Rank 4)
+/nofirstaction
+
+
+###############################################################################################################################################################################################################################################################
+Rejuvenation:
+    Max rank Rejuvenation is gonna be the only rank you ll use, you might want to use a lower rank when you first hit 60 but, you will only ever use one rank of this spell.
+    Rank 4 Rejuv min
+
+
+    sRJ
+#showtooltip
+/cast ?{sos}
+/use ?[noequipped] Rod of Resuscitation
+/cast [@mouseover,help,exists,nocombat] Rejuvenation; [help,exists,nocombat] Rejuvenation; [@player,nocombat] Rejuvenation
+/stopmacro [nocombat]
+/cast [@mouseover,help,exists,mybuff:Clearcasting] Rejuvenation; [help,exists,mybuff:Clearcasting] Rejuvenation; [@player,mybuff:Clearcasting] Rejuvenation
+/stopmacro [mybuff:Clearcasting]
+/cast [@mouseover,help,exists,buff:Rejuvenation<2] {RJm}; [help,exists,buff:Rejuvenation<2] {RJt}; [mybuff:Rejuvenation<2] {RJp}
+/stopmacro [myrawpower:>105]
+/pfcast Rejuvenation
+
+    RJm
+/firstaction
+/cast [@mouseover,myrawpower:>335,hplost:>756] Rejuvenation
+/cast [@mouseover,myrawpower:>280,hplost:>612] Rejuvenation(Rank 9)
+/cast [@mouseover,myrawpower:>235,hplost:>492] Rejuvenation(Rank 8)
+/cast [@mouseover,myrawpower:>195,hplost:>390] Rejuvenation(Rank 7)
+/cast [@mouseover,myrawpower:>160,hplost:>306] Rejuvenation(Rank 6)
+/cast [@mouseover,myrawpower:>135,hplost:>246] Rejuvenation(Rank 5)
+/cast [@mouseover,myrawpower:>105] Rejuvenation(Rank 4)
+/nofirstaction
+
+    RJt
+/firstaction
+/cast [myrawpower:>335,hplost:>756] Rejuvenation
+/cast [myrawpower:>280,hplost:>612] Rejuvenation(Rank 9)
+/cast [myrawpower:>235,hplost:>492] Rejuvenation(Rank 8)
+/cast [myrawpower:>195,hplost:>390] Rejuvenation(Rank 7)
+/cast [myrawpower:>160,hplost:>306] Rejuvenation(Rank 6)
+/cast [myrawpower:>135,hplost:>246] Rejuvenation(Rank 5)
+/cast [myrawpower:>105] Rejuvenation(Rank 4)
+/nofirstaction
+
+    RJp
+/firstaction
+/cast [@player,myrawpower:>335,hplost:>756] Rejuvenation
+/cast [@player,myrawpower:>280,hplost:>612] Rejuvenation(Rank 9)
+/cast [@player,myrawpower:>235,hplost:>492] Rejuvenation(Rank 8)
+/cast [@player,myrawpower:>195,hplost:>390] Rejuvenation(Rank 7)
+/cast [@player,myrawpower:>160,hplost:>306] Rejuvenation(Rank 6)
+/cast [@player,myrawpower:>135,hplost:>246] Rejuvenation(Rank 5)
+/cast [@player,myrawpower:>105] Rejuvenation(Rank 4)
+/nofirstaction
+
+###############################################################################################################################################################################################################################################################
+Regrowth:
+    For Regrowth you will be using one of either Rank 4 or Rank 5 (whichever you prefer), and then max rank, meaning you will have a total of 2 Regrowths bound.
+
+
+    sRG
+#showtooltip
+/cast ?{sos}
+/use ?[noequipped] Rod of Resuscitation
+/use ?[noequipped] Idol of the Forgotten Wilds
+/cast [@mouseover,help,exists,nocombat] Regrowth; [help,exists,nocombat] Regrowth; [@player,nocombat] Regrowth
+/stopmacro [nocombat]
+/cast [@mouseover,help,exists,mybuff:Clearcasting] Regrowth; [help,exists,mybuff:Clearcasting] Regrowth; [@player,mybuff:Clearcasting] Regrowth
+/stopmacro [mybuff:Clearcasting]
+/cast [@mouseover,help,exists] {RGm}; [help,exists] {RGt}; {RGp}
+/stopmacro [myrawpower:>224]
+/pfcast Regrowth
+
+    RGm
+/firstaction
+/cast [@mouseover,myrawpower:>704,hplost:>1363] Regrowth
+/cast [@mouseover,myrawpower:>592,hplost:>1140] Regrowth(Rank 8)
+/cast [@mouseover,myrawpower:>492,hplost:>914] Regrowth(Rank 7)
+/cast [@mouseover,myrawpower:>408,hplost:>728] Regrowth(Rank 6)
+/cast [@mouseover,myrawpower:>336,hplost:>580] Regrowth(Rank 5)
+/cast [@mouseover,myrawpower:>280,hplost:>459] Regrowth(Rank 4)
+/cast [@mouseover,myrawpower:>224] Regrowth(Rank 3)
+/nofirstaction
+
+    RGt
+/firstaction
+/cast [myrawpower:>704,hplost:>1363] Regrowth
+/cast [myrawpower:>592,hplost:>1140] Regrowth(Rank 8)
+/cast [myrawpower:>492,hplost:>914] Regrowth(Rank 7)
+/cast [myrawpower:>408,hplost:>728] Regrowth(Rank 6)
+/cast [myrawpower:>336,hplost:>580] Regrowth(Rank 5)
+/cast [myrawpower:>280,hplost:>459] Regrowth(Rank 4)
+/cast [myrawpower:>224] Regrowth(Rank 3)
+/nofirstaction
+
+    RGp
+/firstaction
+/cast [@player,myrawpower:>704,hplost:>1363] Regrowth
+/cast [@player,myrawpower:>592,hplost:>1140] Regrowth(Rank 8)
+/cast [@player,myrawpower:>492,hplost:>914] Regrowth(Rank 7)
+/cast [@player,myrawpower:>408,hplost:>728] Regrowth(Rank 6)
+/cast [@player,myrawpower:>336,hplost:>580] Regrowth(Rank 5)
+/cast [@player,myrawpower:>280,hplost:>459] Regrowth(Rank 4)
+/cast [@player,myrawpower:>224] Regrowth(Rank 3)
+/nofirstaction
+
+###############################################################################################################################################################################################################################################################
+
+    sSM
+#showtooltip [known] Swiftmend; Challenging Roar
+/cast {sos}
+/use [noequipped] Rod of Resuscitation
+/cast [@mouseover,help,exists,nobuff:Regrowth/Rejuvenation] {RJm}
+/pfcast Swiftmend
+/script QuickHeal(nil,'Swiftmend')
+
+###############################################################################################################################################################################################################################################################
+
+    0ns
+#showtooltip
+/use ?[mod:shift,nocooldown] Tea with Sugar
+/use ?[mod:shift,nocooldown] Nordanaar Herbal Tea
+/use ?[mod:shift,nocooldown] Major Healthstone
+/use ?[mod:shift,nocooldown] Major Healing Potion
+/cast [known,nocooldown] Berserk
+/cast [known,nocooldown] Nature's Swiftness
+/cast [@mouseover,help,exists,mybuff:Nature's_Swiftness,known:Improved_Regrowth] {RGm}; [help,exists,mybuff:Nature's_Swiftness,known:Improved_Regrowth] {RGt}; [mybuff:Nature's_Swiftness,known:Improved_Regrowth] {RGp}
+/cast [@mouseover,help,exists,mybuff:Nature's_Swiftness,noknown:Improved_Regrowth] {HTm}; [help,exists,mybuff:Nature's_Swiftness,noknown:Improved_Regrowth] {HTt}; [mybuff:Nature's_Swiftness,noknown:Improved_Regrowth] {HTp}
+/cast [mybuff:Nature's_Swiftness] {heal}

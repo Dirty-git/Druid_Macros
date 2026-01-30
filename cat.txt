@@ -1,0 +1,76 @@
+    xcat:
+/nofirstaction
+/retarget
+/startattack [combat,nostealth]
+/stopattack [stealth]
+/stopattack [nocombat]
+/cast [myhp:<40] {def}
+/cast [form:3,mod:ctrl] Reshift
+/cast [form:3,myrawpower:<30,nomybuff:Tiger's_Fury,druidmana:>550,known:Furor#5] Reshift
+/cast [noform:3,myhp:>=90] !Cat Form; [noform:3,myhp:>=60,nomybuff:Berserk/Frenzied_Regeneration,cooldown:Berserk&Frenzied_Regeneration,notargeting:player] !Cat Form
+/cast [nocombat] !Prowl
+/cast [myrawpower:>59,nomybuff:Tiger's_Fury] {"/run CastSpellByNameNoQueue("Tiger's Fury")"}
+/cast [nomod,stealth] Ravage; [mod:shift,stealth] Pounce
+/cast [myrawpower:=100,mybuff:Tiger's_Fury<15,nomeleerange] {"/run CastSpellByNameNoQueue("Tiger's Fury")"}; [myrawpower:=100,mybuff:Tiger's_Fury<12] {"/run CastSpellByNameNoQueue("Tiger's Fury")"}
+/stopmacro [gcd:>0.3]; [stealth]; [nocombat]; [noform:3]
+/cast {exe}
+/cast [type:Boss/Worldboss,threat:>65,nocooldown,ttk:>5] Cower; [threat:>80,nocooldown,ttk:>5] Cower
+/cast {xrota}
+/firstaction
+/cast [combat,combat:target,nomybuff:Clearcasting,meleerange,cursive:Rake,myrawpower:<37] {ff}; [combat,combat:target,nomybuff:Clearcasting,meleerange,nocursive:Pounce_Bleed/Rake,myrawpower:<48] {ff} 
+/cast [combat,combat:target,nomeleerange] {ffspread}; [combat,combat:target,nomybuff:Clearcasting,meleerange,myrawpower:<37,druidmana:<550] {ffspread}
+/nofirstaction
+/stopmacro [druidmana:<550]
+/cast {xps}
+
+    xrota:
+/firstaction
+/cast [combo:>4,mod:shift,nocursive:Rip] {xrip}
+/cast [combo:>4,ttk:>12,nocursive:Rip,cursive:Rake/Pounce_Bleed] {xrip}
+/cast [combo:>4,ttk:<13,ttk:>0] Ferocious Bite
+/cast [combo:>4,cursive:Rip] Ferocious Bite
+/cast [combo:>4,nocursive:Rip/Rake] Ferocious Bite
+/cast [combo:<5,mod:shift,nocursive:Rake] {xrake}
+/nofirstaction [mod:shift]
+/skipmacro [mod:shift]
+/cast [combo:<5,mybuff:Clearcasting,nocursive:Rip&Rake&Pounce_Bleed,behind] {xshred}
+/cast [combo:<5,nomybuff:Clearcasting,ttk:>9,nocursive:Rake,cursive:Rip/Pounce_Bleed] {xrake}
+/cast [combo:<5,nomybuff:Clearcasting,cursive:Rake] {xclaw}
+/cast [combo:<5,mybuff:Clearcasting,cursive:Rip&Rake&Pounce_Bleed] {xclaw}
+/cast [combo:<5,mybuff:Clearcasting,nobehind] {xclaw}
+/cast [combo:<5,myrawpower:>89,nobehind,nocursive:Rip/Rake] {xclaw}
+/cast [combo:<5,nocursive:Rip/Rake/Pounce_Bleed] {xshred}
+/cast [combo:<5,myrawpower:>89,nobehind,ttk:<10,ttk:>0] {xclaw}
+/cast [combo:<5,ttk:<10,ttk:>0] {xshred}
+/nofirstaction
+
+    xps:
+/firstaction
+/cast [myrawpower:<8,behind] {"/run CastSpellByNameNoQueue('Reshift')"}
+/nofirstaction [mybuff:Berserk/Clearcasting,ttk:<3,ttk:>0]
+/skipmacro [mybuff:Berserk/Clearcasting,ttk:<3,ttk:>0]
+/cast [nomod,combo:<5,nocursive:Rip/Rake,myrawpower:<28] {"/run CastSpellByNameNoQueue('Reshift')"}
+/cast [combo:<5,cursive:Rip/Rake/Pounce_Bleed,myrawpower:<17] {"/run CastSpellByNameNoQueue('Reshift')"}
+/cast [combo:<5,cursive:Rip/Pounce_Bleed,nocursive:Rake,myrawpower:<12] {"/run CastSpellByNameNoQueue('Reshift')"}
+/cast [combo:>4,cursive:Rake/Pounce_Bleed,nocursive:Rip,myrawpower:<15] {"/run CastSpellByNameNoQueue('Reshift')"}
+/nofirstaction
+
+    xrip:
+/cast [noequipped:Idol_of_Savagery,gcd:<0.2] {"/run QueueScript('SlashCmdList.EQUIP(61699)',2)"}
+/cast [gcd:<0.2] {"/run QueueSpellByName('Rip')"}
+
+    xrake:
+/cast [noequipped:Idol_of_Ferocity,nomybuff:Clearcasting,gcd:<0.2] {"/run QueueScript('SlashCmdList.EQUIP(22397)',2)"}
+/cast [gcd:<0.2] {"/run QueueSpellByName('Rake')"}
+
+
+    xclaw:
+/cast [noequipped:Idol_of_Ferocity,nomybuff:Clearcasting,gcd:<0.2] {"/run QueueScript('SlashCmdList.EQUIP(22397)',2)"}
+/cast [gcd:<0.2] {"/run QueueSpellByName('Claw')"}
+
+    xshred:
+/cast [noequipped:Idol_of_the_Moonfang,gcd:<0.2] {"/run QueueScript('SlashCmdList.EQUIP(61293)',2)"}
+/cast [gcd:<0.2] {"/run QueueSpellByName('Shred')"}
+
+    exe: (see supermacros.lua)
+/script FBExecute()

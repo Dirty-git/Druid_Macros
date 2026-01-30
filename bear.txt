@@ -1,0 +1,36 @@
+bear:
+#showtooltip
+/cast ?{target}
+/cast [myhp:<40] {def}
+/cast {1swipe}
+/cast [nostealth,combat] {ff}
+
+1swipe:
+#showtooltip
+/cast [form:1,mod:ctrl] Reshift
+/cast [nocombat,mybuff:Blood_Frenzy<15,druidmana:>1500] !Cat Form
+/cast [form:3] Tiger's Fury 
+/cast [noform:1] !Dire Bear Form
+/cast [nocooldown:Savage_Bite,mybuff:Clearcasting] {savage}
+/cast [form:1,myrawpower:<5,nomybuff:Clearcasting,druidmana:>1500,known:Furor#5] Reshift
+/use [form:1,noequipped,nomybuff:Clearcasting] Idol of Brutality
+/cast [mod:shift] Swipe
+/cast [nocooldown:Bash,casting,myrawpower:>19] !Maul; [nomod] !Maul
+/cast [nocooldown:Bash,casting,myrawpower:>34] Swipe; [myrawpower:>24] Swipe
+/cast [nocooldown:Bash/Savage_Bite,casting,myrawpower:>44] {savage}; [nocooldown:Savage_Bite,myrawpower:>34] {savage}
+
+1taunt:
+#showtooltip
+/cast [mod:shift,nocooldown] Challenging Roar
+/pfcast Growl
+/pfcast Savage Bite
+
+move:
+#showtooltip
+/cast [form:1,known,myrawpower:>4] Feral Charge; [form:1,known:Feral_Charge,myrawpower:<5,known:Furor#5] Reshift
+/cast [noform:1] Dash; [noknown:Feral_Charge] Dash
+
+savage:
+/use [form:1,noequipped,mybuff:Clearcasting] Idol of the Moonfang
+/use [form:1,noequipped,myrawpower:>34] Idol of the Moonfang
+/cast Savage Bite
